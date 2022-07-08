@@ -1,8 +1,8 @@
 import React from "react";
 import useToggle from "../../hooks/useToggle";
+import { SelectProps } from "../../ts/select.interface";
 
-function Select({ text }: { text: string }) {
-  const [display, setDisplay] = useToggle();
+function Select({ text, options = [], onChange }: SelectProps) {
   return (
     <div className="w-full mt-2">
       <select
@@ -27,13 +27,17 @@ function Select({ text }: { text: string }) {
       focus:text-gray-700 focus:bg-white focus:border-blue-500 focus:outline-none
         bg-[url('images/arrow.svg')] bg-[center_right_0.75rem] bg-[length:16px_12px]
       "
-        
-        defaultValue={text}
+        defaultValue=""
+        onChange={(e) => onChange(e.target.value)}
       >
-        <option value={text}>{text} </option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
+        <option  value="">
+          {text}{" "}
+        </option>
+        {options.map(({ nombre, _id }) => (
+          <option value={nombre} key={_id}>
+            {nombre}
+          </option>
+        ))}
       </select>
       <div className="flex justify-center"></div>
     </div>
