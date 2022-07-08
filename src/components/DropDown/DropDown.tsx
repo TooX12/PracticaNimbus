@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import { Fragment, useEffect } from "react";
 import useToggle from "../../hooks/useToggle";
 import { opciones } from "../../utils/menu.utils";
 import RolMenu from "./RolMenu";

@@ -5,6 +5,7 @@ interface SelectProps {
     defaultValue?: string;
     options?: Array<any>;
     onChange: Dispatch<SetStateAction<string>>;
+    className?:string;
   }
   
   export type { SelectProps };

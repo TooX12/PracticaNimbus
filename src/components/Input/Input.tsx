@@ -1,13 +1,13 @@
 import React from "react";
 import { InputProps } from "../../ts/input.interface";
 
-function Input({ enable = true, defaultValue = "", placeHolder=""}: InputProps) {
+function Input({ enable = true, defaultValue = "", placeHolder="", className=""}: InputProps) {
   return (
-    <div className="w-full mt-2">
       <input
         type="text"
         className={`
         ${enable? "bg-white text-textColor" : "bg-gray-100 text-gray-400"}
+        focus:outline-none
         block
         w-full
         px-3
@@ -20,14 +20,13 @@ function Input({ enable = true, defaultValue = "", placeHolder=""}: InputProps) 
         transition
         ease-in-out
         m-0
-        focus:text-gray-700 focus:bg-white focus:border-blue-500 focus:outline-none
+        ${className}
       `}
         id="exampleFormControlInput1"
         disabled={!enable}
         defaultValue={defaultValue}
         placeholder={placeHolder}
       />
-    </div>
   );
 }
 

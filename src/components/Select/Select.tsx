@@ -2,11 +2,10 @@ import React from "react";
 import useToggle from "../../hooks/useToggle";
 import { SelectProps } from "../../ts/select.interface";
 
-function Select({ text, options = [], onChange }: SelectProps) {
+function Select({ text, options = [], onChange , className=""}: SelectProps) {
   return (
-    <div className="w-full mt-2">
       <select
-        className="
+        className={`
         appearance-none
         relative 
         block
@@ -26,7 +25,7 @@ function Select({ text, options = [], onChange }: SelectProps) {
         m-0
       focus:text-gray-700 focus:bg-white focus:border-blue-500 focus:outline-none
         bg-[url('images/arrow.svg')] bg-[center_right_0.75rem] bg-[length:16px_12px]
-      "
+      ${className}`}
         defaultValue=""
         onChange={(e) => onChange(e.target.value)}
       >
@@ -39,8 +38,6 @@ function Select({ text, options = [], onChange }: SelectProps) {
           </option>
         ))}
       </select>
-      <div className="flex justify-center"></div>
-    </div>
   );
 }
 

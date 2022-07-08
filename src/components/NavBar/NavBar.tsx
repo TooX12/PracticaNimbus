@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from "react";
 import MobileNavBar from "./MobileNavBar";
 
-import { links } from "../../utils/links.utils";
 import useShowNavigation from "../../hooks/useShowNavigation";
 import DropDown from "../DropDown/DropDown";
 import useToggle from "../../hooks/useToggle";

@@ -1,4 +1,3 @@
-import React from "react";
 import { opcionesRol } from "../../utils/menu.utils";
 
 function RolMenu({ show, setShow }: { show: boolean; setShow: VoidFunction }) {
