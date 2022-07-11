@@ -8,7 +8,7 @@ function DropDown({ show }: { show: boolean }) {
 
   useEffect(() => {
     if (!show && showRolMenu) setShowRolMenu(false);
-  }, [show]);
+  }, [show, showRolMenu, setShowRolMenu]);
 
   return (
     <Fragment>

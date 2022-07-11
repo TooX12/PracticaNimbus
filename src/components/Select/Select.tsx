@@ -1,11 +1,14 @@
-import React from "react";
-import useToggle from "../../hooks/useToggle";
 import { SelectProps } from "../../ts/select.interface";
 
-function Select({ text, options = [], onChange , className=""}: SelectProps) {
+function Select({
+  placeHolder = "Selecciona una opción",
+  options = [],
+  onChange,
+  className = "",
+}: SelectProps) {
   return (
-      <select
-        className={`
+    <select
+      className={`
         appearance-none
         relative 
         block
@@ -26,18 +29,18 @@ function Select({ text, options = [], onChange , className=""}: SelectProps) {
       focus:text-gray-700 focus:bg-white focus:border-blue-500 focus:outline-none
         bg-[url('images/arrow.svg')] bg-[center_right_0.75rem] bg-[length:16px_12px]
       ${className}`}
-        defaultValue=""
-        onChange={(e) => onChange(e.target.value)}
-      >
-        <option  value="">
-          {text}{" "}
+      defaultValue=""
+      onChange={(e) => {
+        onChange(e.target.value);
+      }}
+    >
+      <option value="">{placeHolder}</option>
+      {options.map((option) => (
+        <option value={option._id} key={option._id}>
+          {option.nombre ? option.nombre: option.usuario.nombres}
         </option>
-        {options.map(({ nombre, _id }) => (
-          <option value={nombre} key={_id}>
-            {nombre}
-          </option>
-        ))}
-      </select>
+      ))}
+    </select>
   );
 }
 

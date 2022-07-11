@@ -1,7 +1,6 @@
-import React from "react";
 import { InputProps } from "../../ts/input.interface";
 
-function Input({ enable = true, defaultValue = "", placeHolder="", className=""}: InputProps) {
+function Input({ enable = true, placeHolder="", className="", onChange, value="", id=""}: InputProps) {
   return (
       <input
         type="text"
@@ -22,10 +21,11 @@ function Input({ enable = true, defaultValue = "", placeHolder="", className=""}
         m-0
         ${className}
       `}
-        id="exampleFormControlInput1"
+      id={id}
+      onChange={onChange}
         disabled={!enable}
-        defaultValue={defaultValue}
         placeholder={placeHolder}
+        value={value}
       />
   );
 }

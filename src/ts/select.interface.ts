@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 
 interface SelectProps {
-    text?: string;
+    placeHolder?: string;
     defaultValue?: string;
     options?: Array<any>;
     onChange: Dispatch<SetStateAction<string>>;

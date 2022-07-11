@@ -1,24 +1,13 @@
-import MobileNavBar from "./MobileNavBar";
-
-import useShowNavigation from "../../hooks/useShowNavigation";
 import DropDown from "../DropDown/DropDown";
 import useToggle from "../../hooks/useToggle";
 
 function NavBar() {
-  const { width, isOpen, setIsOpen, handleTouchStart } = useShowNavigation();
   const [showProfileMenu, setShowProfileMenu] = useToggle();
 
   return (
     <nav className="h-20 sticky top-0 z-20 max-w-8xl mx-auto flex flex-wrap items-center justify-between py-3 bg-white text-black border-b-2 border-dividerColor">
-      {width && width < 768 && (
-        <MobileNavBar
-          isOpen={isOpen}
-          setIsOpen={setIsOpen}
-          touchStart={handleTouchStart}
-        />
-      )}
       <div className="w-full flex flex-grow items-center justify-between px-3 sm:px-6">
-        <a className="text-xl sm:text-2xl basis-0 flex-grow-1 min-w-[5rem] md:min-w-[10rem] lg:min-w-[15rem] text-black font-semibold">
+        <a className="text-xl sm:text-2xl basis-0 flex-grow-1 min-w-[5rem] md:min-w-[10rem] lg:min-w-[15rem] text-black font-semibold" href="/">
           <svg
             width="158"
             height="30"
@@ -100,16 +89,16 @@ function NavBar() {
         </a>
         <ul className="flex pr-0 basis-0 flex-grow-1 min-w-[5rem] md:min-w-[10rem] lg:min-w-[15rem] justify-end list-style-none">
           <li className="p-1 md:p-2 w-8 h-8 md:w-9 md:h-9 flex items-center justify-center bg-inputColor rounded-full mr-2 md:mr-5">
-            <a className="text-primaryColor p-0">
+            <a className="text-primaryColor p-0" href="/">
               <i className="bx bx-bell text-2xl"></i>
             </a>
           </li>
           <li className="p-1 md:p-2 w-8 h-8 md:w-9 md:h-9 flex items-center justify-center bg-primaryColor rounded-full mr-0 md:mr-2">
-            <a className="text-white p-0">
+            <a className="text-white p-0" href="/">
               <i className="bx bx-happy text-2xl"></i>
             </a>
           </li>
-          <li className="p-1 md:p-2 flex items-center justify-center">
+          <li className="p-1 md:p-2 flex items-center justify-center ml-1 md:ml-0">
             <p className="text-textSelectColor font-medium text-sm">Username</p>
           </li>
           <li className="flex items-center justify-center relative">
