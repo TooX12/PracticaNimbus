@@ -1,16 +1,11 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import NavBar from './components/NavBar/NavBar';
+import Layout from './layout/Layout';
+import CrearGrupo from './pages/CrearGrupo';
 
 function App() {
   return (
-    <div className="App">
-      <NavBar/>
-      <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-    </div>
+    <Layout>
+      <CrearGrupo/>
+    </Layout>
   );
 }
 
